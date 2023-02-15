@@ -133,7 +133,7 @@ echo "= building bash"
 
 pushd bash-${bash_version}
 autoconf -f
-CFLAGS="$CFLAGS -Os" ./configure --without-bash-malloc "${configure_args[@]}"
+CFLAGS="$CFLAGS -Os" ./configure --without-bash-malloc bash_cv_func_strtoimax=no "${configure_args[@]}"
 make
 make tests
 popd # bash-${bash_version}
